@@ -24,7 +24,7 @@ def get_greatest(number_list):
             >>> bm.get_greatest(number_list)
             99
     """
-    greatest_number = None
+    greatest_number = max(number_list)
     return greatest_number
 
 
@@ -45,7 +45,7 @@ def get_smallest(number_list):
             >>> bm.get_smallest(number_list)
             11
     """
-    smallest_number = None
+    smallest_number = min(number_list)
     return smallest_number
 
 
@@ -66,7 +66,9 @@ def get_mean(number_list):
             >>> bm.get_mean(number_list)
             47
     """
-    mean = None
+    len_list = len(number_list)
+    sum_list = sum(number_list)
+    mean = sum_list / len_list
     return mean
 
 
@@ -90,5 +92,12 @@ def get_median(number_list):
             >>> bm.get_median(number_list2)
             35.5
     """
-    median = None
+    number_list.sort()
+    len_list = len(number_list)
+    halflen = int(len_list / 2)
+    median = 0
+    if len_list % 2 == 0 :
+        median = (number_list[halflen - 1] + number_list[halflen]) / 2
+    else :
+        median = number_list[halflen]
     return median
